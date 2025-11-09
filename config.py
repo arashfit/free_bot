@@ -1,12 +1,18 @@
 # config.py
-# تنظیمات اصلی ربات
-BOT_TOKEN = "8533919407:AAGOmunqGnbnJB0LGEGqG3ojtEvtSz9c4fw"
-CHANNEL_USERNAME = "@rank1ac"
-ADMIN_USER_ID = "6583790637"
-SPECIAL_TESTER_ID = ""
-DB_PATH = "bot_data.sqlite3"
+import os
+from dotenv import load_dotenv
 
-# تنظیمات فرمول تخمین قیمت
+# بارگذاری متغیرهای محیطی
+load_dotenv()
+
+# تنظیمات اصلی ربات از محیط
+BOT_TOKEN = os.getenv('BOT_TOKEN', '8533919407:AAGOmunqGnbnJB0LGEGqG3ojtEvtSz9c4fw')
+CHANNEL_USERNAME = os.getenv('CHANNEL_USERNAME', '@rank1ac')
+ADMIN_USER_ID = os.getenv('ADMIN_USER_ID', '6583790637')
+SPECIAL_TESTER_ID = os.getenv('SPECIAL_TESTER_ID', '')
+DB_PATH = os.getenv('DB_PATH', 'bot_data.sqlite3')
+
+# بقیه تنظیمات بدون تغییر باقی می‌مانند...
 PRICE_CONFIG = {
     # محاسبه ارزش کوین
     "coin_value_unit": 625000,  # ارزش هر 100,000 کوین
@@ -72,7 +78,7 @@ PRICE_CONFIG = {
     }
 }
 
-# تنظیمات متن‌ها
+# تنظیمات متن‌ها (بدون تغییر)
 TEXTS = {
     "welcome": "👋 کاربر ({}) خوش آمدید\n📖 خواهشمند است قبل از استفاده از ربات، راهنما را از منو انتخاب کرده و آن را مطالعه فرمایید.",
     
@@ -133,7 +139,7 @@ TEXTS = {
 15. آیدی ارتباط (حتما راهنما را مطالعه کنید):"""
 }
 
-# تنظیمات پلتفرم‌ها
+# بقیه تنظیمات بدون تغییر...
 PLATFORM_CONFIG = {
     "ps": {
         "ps3": "پلی استیشن - ظرفیت 3",
@@ -151,7 +157,6 @@ PLATFORM_CONFIG = {
     }
 }
 
-# تنظیمات ایمیل
 EMAIL_TYPES = {
     "gmail": "Gmail",
     "outlook": "Outlook", 
@@ -160,7 +165,6 @@ EMAIL_TYPES = {
     "other": "سایر"
 }
 
-# تنظیمات وب اپ
 WEB_APP_TYPES = {
     "open": "وب باز",
     "closed": "وب بسته"
