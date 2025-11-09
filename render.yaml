@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: telegram-fifa-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python test_bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: CHANNEL_USERNAME
+        value: "@rank1ac"
+      - key: ADMIN_USER_ID
+        value: "6583790637"
+      - key: SPECIAL_TESTER_ID
+        value: ""
+      - key: DB_PATH
+        value: "bot_data.sqlite3"
