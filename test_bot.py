@@ -1,4 +1,5 @@
 # test_bot.py
+# test_bot.py
 import logging
 import sqlite3
 import os
@@ -22,6 +23,10 @@ CHANNEL_USERNAME = config.CHANNEL_USERNAME
 ADMIN_USER_ID = config.ADMIN_USER_ID
 SPECIAL_TESTER_ID = config.SPECIAL_TESTER_ID
 DB_PATH = config.DB_PATH
+
+# بررسی وجود توکن
+if not BOT_TOKEN:
+    raise ValueError("❌ BOT_TOKEN در محیط تعریف نشده است!")
 
 # ================================
 logging.basicConfig(
